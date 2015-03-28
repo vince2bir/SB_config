@@ -56,10 +56,10 @@ gamma_current                                1.7              # Y stepper motor 
 gamma_max_rate                               30000.0          # mm/min
 
 delta_step_pin                               2.3              # Pin for delta stepper step signal
-delta_dir_pin                                0.20             # Pin for delta stepper direction
-delta_en_pin                                 0.19             # Pin for delta enable
+delta_dir_pin                                0.22             # Pin for delta stepper direction
+delta_en_pin                                 0.21             # Pin for delta enable
 delta_current                                1.7              # Z stepper motor current
-delta_max_rate                               300.0            # mm/min
+delta_max_rate                               3000.0            # mm/min
 
 # Serial communications configuration ( baud rate default to 9600 if undefined )
 uart0.baud_rate                              115200           # Baud rate for the default hardware serial port
@@ -88,7 +88,7 @@ laser_module_enable                          false            # Whether to activ
 #laser_module_pwm_period                      20              # this sets the pwm frequency as the period in microseconds
 
 # Switch module for fan control
-switch.fan.enable                            true             #
+switch.fan.enable                            false            #
 switch.fan.input_on_command                  M106             #
 switch.fan.input_off_command                 M107             #
 switch.fan.output_pin                        2.6              #
@@ -100,15 +100,6 @@ switch.fan.output_type                       pwm              # pwm output setta
 #switch.misc.input_off_command                M43              #
 #switch.misc.output_pin                       2.4              #
 #switch.misc.output_type                      digital          # just an on or off pin
-
-# automatically toggle a switch at a specified temperature. Different ones of these may be defined to monitor different temperatures and switch different swithxes
-# useful to turn on a fan or water pump to cool the hotend
-#temperatureswitch.hotend.enable              true             #
-#temperatureswitch.hotend.designator          T                # first character of the temperature control designator to use as the temperature sensor to monitor
-#temperatureswitch.hotend.switch              misc             # select which switch to use, matches the name of the defined switch
-#temperatureswitch.hotend.threshold_temp      60.0             # temperature to turn on (if rising) or off the switch
-#temperatureswitch.hotend.heatup_poll         15               # poll heatup at 15 sec intervals
-#temperatureswitch.hotend.cooldown_poll       60               # poll cooldown at 60 sec intervals
 
 # Switch module for spindle control
 #switch.spindle.enable                        false            #
@@ -162,16 +153,6 @@ zprobe.slow_feedrate                         5               # mm/sec probe feed
 zprobe.fast_feedrate                         100             # move feedrate mm/sec
 zprobe.probe_height                          5               # how much above bed to start probe
 #gamma_min_endstop                           nc              # normally 1.28. Change to nc to prevent conflict,
-
-# associated with zprobe the leveling strategy to use
-#leveling-strategy.three-point-leveling.enable         true        # a leveling strategy that probes three points to define a plane and keeps the Z parallel to that plane
-#leveling-strategy.three-point-leveling.point1         100.0,0.0   # the first probe point (x,y) optional may be defined with M557
-#leveling-strategy.three-point-leveling.point2         200.0,200.0 # the second probe point (x,y)
-#leveling-strategy.three-point-leveling.point3         0.0,200.0   # the third probe point (x,y)
-#leveling-strategy.three-point-leveling.home_first     true        # home the XY axis before probing
-#leveling-strategy.three-point-leveling.tolerance      0.03        # the probe tolerance in mm, anything less that this will be ignored, default is 0.03mm
-#leveling-strategy.three-point-leveling.probe_offsets  0,0,0       # the probe offsets from nozzle, must be x,y,z, default is no offset
-#leveling-strategy.three-point-leveling.save_plane     false       # set to true to allow the bed plane to be saved with M500 default is false
 
 # Panel
 panel.enable                                 false             # set to true to enable the panel code
